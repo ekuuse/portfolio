@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Gruppo", sans-serif;
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.089) 40%, rgba(0, 36, 70, 0.8) 100%),
+    url('assets/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+::-webkit-scrollbar {
+    display:none;
+}
+
+.maincontent {
+    position: relative;
+    z-index: 2;
+}
+
+.navbar {
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.075);
+    color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    padding: 1rem;
+    z-index: 10;
+    backdrop-filter: blur(30px);
+}
+
+.navbar p {
+    font-size: 40px;
+}
+
+.start {
+    margin-top: 17rem;
+    margin-left: 17rem;
+    color: white
+}
+
+.start h1 {
+    font-size: 70px;
+}
+.start p {
+    font-size: 25px;
+}
+
+.aboutme {
+    margin-top: 17rem;
+    color: white;
+    backdrop-filter: blur(10px);
+    padding: 10px;
+}
+
+.aboutme h2 {
+    font-size: 40px;
+}
+.aboutme p {
+    font-size: 20px;
+}
+
+.aboutskills {
+    margin-top: 17rem;
+    color: white;
+    backdrop-filter: blur(10px);
+    padding: 10px;
+}
+
+.aboutskills h2 {
+    font-size: 40px;
+}
+.aboutskills p {
+    font-size: 20px;
+}
+
+.section {
+    margin-left: 17rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#particles-js {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+}
+
+#particle-mask {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+
+    background: linear-gradient(
+        to top,
+        rgba(0, 36, 70, 0.8) 0%,
+        rgba(0, 21, 41, 0.8) 20%,
+        transparent 60%
+    );
+
+    transform: translateY(100%);
+    transition: transform 0.05s linear;
+}
+
+.projects-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 5rem;
+    flex-wrap: wrap;
+    margin-top: 4rem;
+}
+
+.projects-container-text {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 420px;
+    flex: 1 1 320px;
+    word-break: break-word;
+}
+
+.projects-container img {
+    max-width: 50%;
+    flex: 0 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hostedbutton {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.skills-list {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.75rem;
+    max-width: 900px;
+}
+
+.skill {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+}
+
+.skill-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 190px;
+}
+
+.skill-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.skill-name {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.skill-right {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.skill-bar-track {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+.skill-bar-fill {
+    height: 100%;
+    width: calc(var(--level, 0) * 1%);
+    background: linear-gradient(90deg, #ffffff, rgb(60, 148, 199));
+    border-radius: inherit;
+    box-shadow: 0 0 12px rgba(34, 211, 238, 0.35);
+    transition: width 600ms ease;
+}
+
+.skill-percent {
+    min-width: 3ch;
+    text-align: right;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .navbar p {
+        font-size: 24px;
+    }
+
+    .start {
+        margin-top: 10rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+    .start h1 {
+        font-size: 40px;
+    }
+
+    .start p {
+        font-size: 18px;
+    }
+
+    .section {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .aboutme h2 {
+        font-size: 28px;
+    }
+
+    .aboutme p {
+        font-size: 18px;
+    }
+
+    .aboutskills h2 {
+        font-size: 28px;
+    }
+
+    .aboutskills p {
+        font-size: 18px;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+    }
+
+    .projects-container-text {
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .projects-container-text h2 {
+        font-size: 24px;
+    }
+
+    .projects-container-text p {
+        font-size: 18px;
+    }
+
+    .projects-container img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .skills-list {
+        max-width: 100%;
+    }
+
+    .skill-left {
+        min-width: 0;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.75rem;
+    }
+
+    .navbar p {
+        font-size: 18px;
+    }
+
+    .start {
+        margin-top: 8rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .start h1 {
+        font-size: 28px;
+    }
+
+    .start p {
+        font-size: 16px;
+    }
+
+    .section {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .aboutme h2,
+    .aboutskills h2 {
+        font-size: 22px;
+    }
+
+    .aboutme p,
+    .aboutskills p {
+        font-size: 16px;
+    }
+
+    .projects-container-text h2 {
+        font-size: 20px;
+    }
+
+    .projects-container-text p {
+        font-size: 16px;
+    }
+
+    .skill-name {
+        font-size: 17px;
+    }
+
+    .skill-percent {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 900px) {
+    .skill {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    .skill-right {
+        grid-template-columns: 1fr auto;
+    }
+    .skill-left {
+        min-width: 0;
+    }
+}
